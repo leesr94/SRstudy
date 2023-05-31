@@ -21,13 +21,20 @@
 	<!-- DataSource : DB 연결 정보 객체 -->
 	
 	
-	<!-- SqlSessionFactory : DB연결, MyBatis 설정, SQL 실행 등 -->
+	<!-- SqlSessionFactory : DB연결, MyBatis 설정, SQL 실행 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:/mybatis-config.xml" />
 		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml" />
 	</bean>
-	<!-- SqlSessionFactory : DB연결, MyBatis 설정, SQL 실행 등 -->
+	<!-- SqlSessionFactory : DB연결, MyBatis 설정, SQL 실행 -->
+	
+	
+	<!-- SqlSessionTemplate : DB연결, MyBatis 설정, Mapper 설정(SQL 실행), DB종료 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	<!-- SqlSessionTemplate : DB연결, MyBatis 설정, Mapper 설정(SQL 실행), DB종료 -->
 	
 	
 	<!-- 외부 객체 등록 -->
