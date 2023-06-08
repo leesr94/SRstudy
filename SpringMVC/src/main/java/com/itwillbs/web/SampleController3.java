@@ -90,7 +90,10 @@ public class SampleController3 {
 		
 		// 영역에 저장 (jsp에서 request.setAttribute 한 것) 불가능! -> 영역의 역할을 대신하는 Model 객체 사용!!
 		// Model : Spring에서 제공하는 컨테이너(박스). 컨트롤러와 뷰 사이에서 정보를 옮겨주는 역할을 한다.
-		model.addAttribute("vo", vo);
+		model.addAttribute("vo", vo);		// key - value 형태
+		
+//		model.addAttribute("vo", vo);
+		// 객체만 담을 수 있는 형태 -> 키가 없을 경우 전달하는 타입의 클래스명을 첫글자 소문자로 변경하여 호출
 		
 		return "doC";
 	}

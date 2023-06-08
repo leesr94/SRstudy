@@ -9,6 +9,7 @@
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	<!-- 프로젝트의 웹 관련 부분을 관리하는 파일 -->
+	<!-- Controller 관리 -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
