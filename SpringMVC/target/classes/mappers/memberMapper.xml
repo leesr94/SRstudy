@@ -38,4 +38,18 @@
 	</delete>
 	<!-- 회원정보 삭제 -->
 	
+	
+	<!-- 회원정보 조회 -->
+	<select id="getMember" resultType="com.itwillbs.domain.MemberVO">
+		select * from tbl_member where userid = #{userid}
+	</select>
+	<!-- 회원정보 조회 -->
+	
+	
+	<!-- 회원목록 조회 : resultType에 따로 리스트로 설정하지 않아도, DAOImpl에서 selectOne 대신에 selectList하면 List로 받을 수 있다! -->
+	<select id="memberList" resultType="com.itwillbs.domain.MemberVO">
+		select * from tbl_member
+	</select>
+	<!-- 회원목록 조회 -->
+	
 </mapper>

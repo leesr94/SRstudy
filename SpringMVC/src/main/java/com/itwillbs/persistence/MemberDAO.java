@@ -1,5 +1,7 @@
 package com.itwillbs.persistence;
 
+import java.util.List;
+
 import com.itwillbs.domain.MemberVO;
 
 // persistence : 영속성 -> DB 관련 처리
@@ -25,4 +27,10 @@ public interface MemberDAO {
 	
 	// Delete - 회원정보 삭제
 	public Integer deleteMember(MemberVO dvo);
+	
+	// 회원정보 조회
+	public MemberVO getMember(String id);
+	
+	// 회원목록 조회
+	public List<MemberVO> getMemberList();
 }
